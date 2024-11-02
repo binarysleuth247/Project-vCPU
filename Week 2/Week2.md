@@ -1,6 +1,36 @@
 # Week 2: Instruction Set Architecture (ISA)
 
-## Basic Instructions:
+## Assembler Program Description
+
+The Assembler Program is a tool designed to convert assembly code into machine code. It allows users to write assembly instructions, which are then translated into the binary code that a CPU can execute. This program provides an intuitive interface for entering assembly instructions and viewing the corresponding machine code.
+
+### How to Use the Program
+
+1. **Input Assembly Code**:
+   - Enter your assembly instructions in the "Input" section. Each instruction should be on a new line.
+
+2. **Assemble the Code**:
+   - Click the "Assemble" button to convert the assembly code into machine code.
+
+3. **View Output**:
+   - The resulting machine code will be displayed in the "Output" section.
+
+### Sample Input and Output
+
+**Sample Input**:
+```assembly
+ADD R1, R2, R3
+SUB R4, R5, R6
+LOAD R1, [R2]
+STORE R3, [R4]
+```
+**Sample Output**:
+```text
+0001000100100011
+0010010001010110
+0011000100100000
+0100001101000000
+```
 
 ### ADD:
 **Operation**: Adds the values from two registers and stores the result in a destination register.  
