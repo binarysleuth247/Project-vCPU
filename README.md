@@ -34,14 +34,14 @@ The primary objective is to gain a thorough understanding of CPU design and oper
 
 ## Weekly Tasks Overview 🗓️
 
-### Week 1: Project Planning & Setup
+### [Week 1: Project Planning & Setup](https://github.com/binarysleuth247/Project-vCPU/blob/main/Week%201/Week1.md)
 - **Objective:** Define project scope, gather resources, set up development environment.
 - **Tasks:**
   - Outline the features of the virtual CPU.
   - Choose a programming language (Python/C++) and tools.
   - Set up version control (e.g., GitHub).
 
-### Week 2: Instruction Set Architecture (ISA)
+### [Week 2: Instruction Set Architecture (ISA)](https://github.com/binarysleuth247/Project-vCPU/blob/main/Week%202/Week2.md)
 - **Objective:** Design the ISA for the virtual CPU.
 - **Tasks:**
   - Define basic instructions (ADD, SUB, LOAD, STORE, etc.).
