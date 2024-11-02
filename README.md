@@ -1,5 +1,6 @@
 # Virtual CPU Emulator
-<img src="https://github.com/binarysleuth247/Project-vCPU/blob/main/cpu-z-svgrepo-com.svg" height="100"/>
+<img src="https://github.com/binarysleuth247/Project-vCPU/blob/main/cpu-z-svgrepo-com.svg" height="150"/>
+
 ## Project Description 📝
 Welcome to the Virtual CPU Emulator project! This project aims to build an emulation of a virtual CPU from the ground up, over the span of 10 weeks. Each week we will focus on different tasks to incrementally build and refine our emulator. Made By Bangladeshi Students. 🇧🇩
 
