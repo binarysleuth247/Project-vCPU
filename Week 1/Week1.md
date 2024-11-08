@@ -74,7 +74,7 @@
     - Tools to measure execution time, memory usage, and other performance metrics.
 
 18. **User Interface**:
-    - A simple GUI to interact with the vCPU, load programs, and visualize execution.
+    - A simple CLI to interact with the vCPU, load programs, and visualize execution.
 
 ## Programming Language: C++
 
@@ -84,7 +84,6 @@
 - **Extensive Libraries**: Access to numerous libraries for various functionalities.
 
 ### Tools and Frameworks:
-- **Qt**: For GUI development.
 - **Boost**: For a wide range of utility libraries.
 - **Google Test**: For unit testing.
 - **CMake**: For build automation.
