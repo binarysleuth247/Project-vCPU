@@ -49,7 +49,7 @@ The primary objective is to gain a thorough understanding of CPU design and oper
   - Document the instruction formats.
   - Create a simple assembler to convert assembly code into machine code.
 
-### Week 3: Basic CPU Components
+### [Week 3: Basic CPU Components](https://github.com/binarysleuth247/Project-vCPU/blob/main/Week%203/Week3.md)
 - **Objective:** Implement core components of the CPU.
 - **Tasks:**
   - Build the ALU (Arithmetic Logic Unit).
