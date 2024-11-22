@@ -1,0 +1,3 @@
+/home/brainrot/Documents/Project-vCPU/build/CMakeFiles/Project-vCPU.dir
+/home/brainrot/Documents/Project-vCPU/build/CMakeFiles/edit_cache.dir
+/home/brainrot/Documents/Project-vCPU/build/CMakeFiles/rebuild_cache.dir
