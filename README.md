@@ -118,4 +118,8 @@ Coming Soon.
 ## License 🛠️
 Open License. Feel Free to use & Modify
 
+<<<<<<< HEAD
 **Primary Contact:** 📬 MD. Rohan, Mail: mdrohansheikh1000@gmail.com 
+=======
+**Primary Contact:** 📬 MD. Rohan, Mail: mdrohansheikh1000@gmail.com 
+>>>>>>> c70d70303a5d72c4a39d48491cf8e55b7bd81225

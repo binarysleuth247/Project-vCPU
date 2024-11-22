@@ -87,4 +87,8 @@
 - **Boost**: For a wide range of utility libraries.
 - **Google Test**: For unit testing.
 - **CMake**: For build automation.
+<<<<<<< HEAD
 - **GitHub/GitLab**: For version control.
+=======
+- **GitHub/GitLab**: For version control.
+>>>>>>> c70d70303a5d72c4a39d48491cf8e55b7bd81225

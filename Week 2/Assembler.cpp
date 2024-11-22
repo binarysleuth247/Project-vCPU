@@ -48,4 +48,8 @@ int main() {
     cout << "\nMachine Code:\n" << assemble(assemblyCode) << endl;
     
     return 0;
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> c70d70303a5d72c4a39d48491cf8e55b7bd81225
