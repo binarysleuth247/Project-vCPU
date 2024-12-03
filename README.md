@@ -56,7 +56,7 @@ The primary objective is to gain a thorough understanding of CPU design and oper
   - Implement general-purpose registers.
   - Create the program counter and instruction register.
 
-### Week 4: Instruction Execution
+### [Week 4: Instruction Execution](https://github.com/binarysleuth247/Project-vCPU/blob/main/Week%204/Week4.md)
 - **Objective:** Develop the instruction fetch-decode-execute cycle.
 - **Tasks:**
   - Implement the instruction fetching mechanism.
