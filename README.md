@@ -63,7 +63,7 @@ The primary objective is to gain a thorough understanding of CPU design and oper
   - Decode instructions and execute them using the ALU and registers.
   - Test with simple programs.
 
-### Week 5: Memory Management
+### [Week 5: Memory Management](https://github.com/binarysleuth247/Project-vCPU/blob/main/Week%205/Week5.md)
 - **Objective:** Implement memory management for the virtual CPU.
 - **Tasks:**
   - Set up a simulated memory space.
