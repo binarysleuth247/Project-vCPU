@@ -181,10 +181,9 @@ vector<int> assemble(const string& assemblyCode) {
     }
     return machineCode;
 }
-
+```
 ### Difference Between week 5 & 6
 
-```markdown
 | Feature                           | Original Code                                                                 | Updated Code                                                                 |
 |-----------------------------------|-------------------------------------------------------------------------------|------------------------------------------------------------------------------|
 | **Instruction Types**             | `enum InstructionType { ADD, SUB, LOAD, STORE, UNKNOWN };`                     | `enum InstructionType { ADD, SUB, LOAD, STORE, INPUT, OUTPUT, UNKNOWN };`    |
@@ -203,7 +202,6 @@ vector<int> assemble(const string& assemblyCode) {
 | **Input Instruction Handling**    | Not present                                                                   | `if (opcodeStr == "INPUT") { int value; cout << "Enter value for R" << ...` |
 | **Output Instruction Handling**   | Not present                                                                   | `if (opcodeStr == "OUTPUT") { int value = registers.get("R" + ...`           |
 
-```
 
 ### Summary of Changes:
 - **Instruction Types:** Added `INPUT` and `OUTPUT` instructions.
