@@ -181,3 +181,34 @@ vector<int> assemble(const string& assemblyCode) {
     }
     return machineCode;
 }
+
+### Difference Between week 5 & 6
+
+```markdown
+| Feature                           | Original Code                                                                 | Updated Code                                                                 |
+|-----------------------------------|-------------------------------------------------------------------------------|------------------------------------------------------------------------------|
+| **Instruction Types**             | `enum InstructionType { ADD, SUB, LOAD, STORE, UNKNOWN };`                     | `enum InstructionType { ADD, SUB, LOAD, STORE, INPUT, OUTPUT, UNKNOWN };`    |
+| **ALU Operations**                | `int performOperation(const string& opcode, int operand1, int operand2)`       | No change                                                                   |
+| **Registers Class**               | No change                                                                     | No change                                                                   |
+| **Memory Class**                  | No change                                                                     | No change                                                                   |
+| **CPU Class Constructor**         | `CPU() : programCounter(0), memory(25) {}`                                     | No change                                                                   |
+| **CPU Class `executeProgram`**    | No change                                                                     | No change                                                                   |
+| **CPU Class `decodeAndExecute`**  | `void decodeAndExecute(int instruction, ostream& outputStream)`                | Added handling for `INPUT` and `OUTPUT` instructions                        |
+| **Decode And Execute Function**   | Handles `ADD`, `SUB`, `LOAD`, `STORE` instructions                            | Added cases for `INPUT`, `OUTPUT` instructions                              |
+| **Opcode String Conversion**      | `string getOpcodeString(int opcode)`                                           | Added cases for `INPUT`, `OUTPUT`                                           |
+| **Assembler Function**            | Handles `ADD`, `SUB`, `LOAD`, `STORE` instructions                            | Added handling for `INPUT`, `OUTPUT` instructions                           |
+| **Main Function - Input File**    | `ifstream inputFile("input.txt");`                                            | No change                                                                   |
+| **Main Function - Assembly Code** | `string assemblyCode;`                                                        | No change                                                                   |
+| **Main Function - Output File**   | `ofstream outputFile("output.txt");`                                          | No change                                                                   |
+| **Input Instruction Handling**    | Not present                                                                   | `if (opcodeStr == "INPUT") { int value; cout << "Enter value for R" << ...` |
+| **Output Instruction Handling**   | Not present                                                                   | `if (opcodeStr == "OUTPUT") { int value = registers.get("R" + ...`           |
+
+```
+
+### Summary of Changes:
+- **Instruction Types:** Added `INPUT` and `OUTPUT` instructions.
+- **CPU Class `decodeAndExecute`:** Added handling for `INPUT` and `OUTPUT` instructions.
+- **Decode And Execute Function:** Extended to include I/O instructions.
+- **Opcode String Conversion:** Extended to return strings for `INPUT` and `OUTPUT` opcodes.
+- **Assembler Function:** Extended to handle `INPUT` and `OUTPUT` instructions.
+- **Input and Output Handling:** Added logic to read from the keyboard and write to the display. 
