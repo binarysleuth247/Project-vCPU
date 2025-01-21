@@ -70,14 +70,14 @@ The primary objective is to gain a thorough understanding of CPU design and oper
   - Implement memory read/write operations.
   - Handle address mapping and memory segmentation.
 
-### Week 6: I/O Operations
+### [Week 6: I/O Operations](https://github.com/binarysleuth247/Project-vCPU/blob/main/Week%206/Week6.md)
 - **Objective:** Enable basic input/output operations.
 - **Tasks:**
   - Implement simulated I/O devices (keyboard, display).
   - Create I/O instructions and integrate them with the CPU.
   - Test with I/O-intensive programs.
 
-### Week 7: Advanced Features
+### [Week 7: Advanced Features](https://github.com/binarysleuth247/Project-vCPU/blob/main/Week%207/Week7.md)
 - **Objective:** Add advanced CPU features.
 - **Tasks:**
   - Implement branching and control flow instructions.
