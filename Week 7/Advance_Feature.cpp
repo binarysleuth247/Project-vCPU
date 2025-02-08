@@ -4,36 +4,53 @@
 #include <map>
 #include <vector>
 #include <string>
+#include <bitset>
 
 using namespace std;
 
-// Enum for instruction types
 enum InstructionType { ADD, SUB, LOAD, STORE, INPUT, OUTPUT, JUMP, CALL, RET, UNKNOWN };
+
+// Helper function for binary to decimal conversion
+int binaryToDecimal(const string& binary) {
+    return stoi(binary, nullptr, 2);
+}
+
+// Helper function for decimal to binary conversion
+string decimalToBinary(int decimal) {
+    return bitset<8>(decimal).to_string();
+}
 
 // ALU class
 class ALU {
 public:
-    int performOperation(const string& opcode, int operand1, int operand2) {
-        if (opcode == "ADD") return operand1 + operand2;
-        if (opcode == "SUB") return operand1 - operand2;
-        if (opcode == "LOAD") return operand2;
-        if (opcode == "STORE") return operand1;
-        return 0;
+    string performOperation(const string& opcode, const string& operand1, const string& operand2) {
+        int op1 = binaryToDecimal(operand1);
+        int op2 = binaryToDecimal(operand2);
+        int result;
+        if (opcode == "ADD") result = op1 + op2;
+        else if (opcode == "SUB") result = op1 - op2;
+        else if (opcode == "LOAD") result = op2;
+        else if (opcode == "STORE") result = op1;
+        else result = 0;
+        return decimalToBinary(result);
     }
 };
 
 // General-purpose registers class
 class Registers {
 public:
-    map<string, int> regs;
+    map<string, string> regs;
     Registers() {
-        regs["R0"] = 0; regs["R1"] = 4; regs["R2"] = 9; regs["R3"] = 10;
+        regs["R0"] = decimalToBinary(0);
+        regs["R1"] = decimalToBinary(4);
+        regs["R2"] = decimalToBinary(9);
+        regs["R3"] = decimalToBinary(10);
     }
-    int get(const string& reg) { return regs[reg]; }
-    void set(const string& reg, int value) { regs[reg] = value; }
+    string get(const string& reg) { return regs[reg]; }
+    void set(const string& reg, const string& value) { regs[reg] = value; }
     void display(ostream& outputStream) {
         for (const auto& reg : regs) {
-            outputStream << reg.first << ": " << reg.second << " ";
+            outputStream << reg.first << ": " << binaryToDecimal(reg.second) << " ";
         }
         outputStream << endl;
     }
@@ -42,26 +59,26 @@ public:
 // Memory management class
 class Memory {
 public:
-    vector<int> memorySpace;
-    Memory(int size) : memorySpace(size, 0) {}
-    int read(int address) {
+    vector<string> memorySpace;
+    Memory(int size) : memorySpace(size, decimalToBinary(0)) {}
+    string read(int address) {
         if (address < 0 || address >= memorySpace.size()) {
             cout << "Memory read error: Address out of bounds" << endl;
-            return -1;
+            return decimalToBinary(-1);
         }
         return memorySpace[address];
     }
-    void write(int address, int value) {
+    void write(int address, const string& value) {
         if (address < 0 || address >= memorySpace.size()) {
             cout << "Memory write error: Address out of bounds" << endl;
             return;
         }
-        cout << "Writing value " << value << " to memory address " << address << endl;
+        cout << "Writing value " << binaryToDecimal(value) << " to memory address " << address << endl;
         memorySpace[address] = value;
     }
     void display(ostream& outputStream) {
         for (int i = 0; i < memorySpace.size(); ++i) {
-            outputStream << "Address " << i << ": " << memorySpace[i] << " ";
+            outputStream << "Address " << i << ": " << binaryToDecimal(memorySpace[i]) << " ";
         }
         outputStream << endl;
     }
@@ -98,44 +115,44 @@ private:
 
         outputStream << "Decoding instruction: " << instruction << " as (" << opcodeStr << " R" << reg1 << " R" << reg2 << ")" << endl;
 
-        int operand1 = registers.get("R" + to_string(reg1));
-        int operand2 = registers.get("R" + to_string(reg2));
+        string operand1 = registers.get("R" + to_string(reg1));
+        string operand2 = registers.get("R" + to_string(reg2));
 
-        outputStream << "Operands: " << "operand1 = " << operand1 << ", operand2 = " << operand2 << endl;
+        outputStream << "Operands: " << "operand1 = " << binaryToDecimal(operand1) << ", operand2 = " << binaryToDecimal(operand2) << endl;
 
         if (opcodeStr == "INPUT") {
             int value;
             cout << "Enter value for R" << reg1 << ": ";
             cin >> value;
-            registers.set("R" + to_string(reg1), value);
+            registers.set("R" + to_string(reg1), decimalToBinary(value));
             outputStream << "Input value " << value << " into R" << reg1 << endl;
         } else if (opcodeStr == "OUTPUT") {
-            int value = registers.get("R" + to_string(reg1));
+            int value = binaryToDecimal(registers.get("R" + to_string(reg1)));
             cout << "Output value from R" << reg1 << ": " << value << endl;
             outputStream << "Output value from R" << reg1 << ": " << value << endl;
         } else if (opcodeStr == "JUMP") {
-            programCounter = operand2;
-            outputStream << "Jumping to address " << operand2 << endl;
+            programCounter = binaryToDecimal(operand2);
+            outputStream << "Jumping to address " << binaryToDecimal(operand2) << endl;
         } else if (opcodeStr == "CALL") {
-            memory.write(memory.memorySpace.size() - 1, programCounter);
-            programCounter = operand2;
-            outputStream << "Calling subroutine at address " << operand2 << endl;
+            memory.write(memory.memorySpace.size() - 1, decimalToBinary(programCounter));
+            programCounter = binaryToDecimal(operand2);
+            outputStream << "Calling subroutine at address " << binaryToDecimal(operand2) << endl;
         } else if (opcodeStr == "RET") {
-            programCounter = memory.read(memory.memorySpace.size() - 1);
+            programCounter = binaryToDecimal(memory.read(memory.memorySpace.size() - 1));
             outputStream << "Returning from subroutine to address " << programCounter << endl;
         } else {
-            int result = alu.performOperation(opcodeStr, operand1, operand2);
+            string result = alu.performOperation(opcodeStr, operand1, operand2);
             if (opcodeStr == "LOAD") {
-                int value = memory.read(operand2);
+                string value = memory.read(binaryToDecimal(operand2));
                 registers.set("R" + to_string(reg1), value);
-                outputStream << "Loaded value " << value << " into R" << reg1 << endl;
+                outputStream << "Loaded value " << binaryToDecimal(value) << " into R" << reg1 << endl;
             } else if (opcodeStr == "STORE") {
-                memory.write(operand2, operand1);
-                outputStream << "Stored value " << operand1 << " at memory address " << operand2 << endl;
+                memory.write(binaryToDecimal(operand2), operand1);
+                outputStream << "Stored value " << binaryToDecimal(operand1) << " at memory address " << binaryToDecimal(operand2) << endl;
             } else {
                 registers.set("R" + to_string(reg1), result);
                 outputStream << "Executing instruction: " << instruction << " (" << opcodeStr << " R" << reg1 << " R" << reg2 << ")" << endl;
-                outputStream << "Updated R" << reg1 << " to " << result << endl;
+                outputStream << "Updated R" << reg1 << " to " << binaryToDecimal(result) << endl;
             }
         }
 
@@ -238,3 +255,4 @@ int main() {
 
     return 0;
 }
+

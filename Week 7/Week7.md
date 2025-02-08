@@ -1,4 +1,5 @@
-## Updated Advance Features
+## Updated Advanced Features Documentation
+
 ### 1. Branching and Control Flow Instruction
 
 **JUMP Instruction:**
@@ -15,18 +16,17 @@ else if (opcodeStr == "JUMP") {
 ### 2. Subroutines and Interrupts
 
 **CALL and RET Instructions:**
-The `CALL` instruction is used to call subroutines. It saves the address of the next instruction to a specific memory location (used as a stack) and jumps to the address of the subroutine.
-
-The `RET` instruction is used to return from subroutines. It retrieves the address stored by the `CALL` instruction and continues execution from there.
+- **CALL Instruction**: The `CALL` instruction is used to call subroutines. It saves the address of the next instruction to a specific memory location (used as a stack) and jumps to the address of the subroutine.
+- **RET Instruction**: The `RET` instruction is used to return from subroutines. It retrieves the address stored by the `CALL` instruction and continues execution from there.
 
 In the `decodeAndExecute` method:
 ```cpp
 else if (opcodeStr == "CALL") {
-    memory.write(memorySpace.size() - 1, programCounter);
-    programCounter = operand2;
-    outputStream << "Calling subroutine at address " << operand2 << endl;
+    memory.write(memory.memorySpace.size() - 1, programCounter);
+    programCounter = binaryToDecimal(operand2);
+    outputStream << "Calling subroutine at address " << binaryToDecimal(operand2) << endl;
 } else if (opcodeStr == "RET") {
-    programCounter = memory.read(memorySpace.size() - 1);
+    programCounter = binaryToDecimal(memory.read(memory.memorySpace.size() - 1));
     outputStream << "Returning from subroutine to address " << programCounter << endl;
 }
 ```
@@ -61,5 +61,56 @@ ADD R0 R1   ; Add value in R1 to R0
 STORE R0 R3 ; Store value in R0 to memory address in R3
 JUMP R0 R2  ; Jump to address in R2
 RET R0 R1   ; Return from subroutine
+```
+
+### Input and Output Example
+
+#### Input (Assembly Code):
+```
+CALL R1 R2
+LOAD R0 R3
+ADD R0 R1
+STORE R0 R3
+JUMP R0 R2
+RET R0 R1
+```
+
+#### Output (Console and `output.txt`):
+```
+Fetching instruction at address 0: 448
+Decoding instruction: 448 as (CALL R1 R2)
+Calling subroutine at address 2
+Current Register States: R0: 0 R1: 4 R2: 9 R3: 10
+Current Memory State: Address 0: 0 Address 1: 0 Address 2: 0 ... Address 24: 0
+
+Fetching instruction at address 2: 64
+Decoding instruction: 64 as (LOAD R0 R3)
+Loaded value 10 into R0
+Current Register States: R0: 10 R1: 4 R2: 9 R3: 10
+Current Memory State: Address 0: 0 Address 1: 0 Address 2: 0 ... Address 24: 0
+
+Fetching instruction at address 3: 8
+Decoding instruction: 8 as (ADD R0 R1)
+Updated R0 to 14
+Current Register States: R0: 14 R1: 4 R2: 9 R3: 10
+Current Memory State: Address 0: 0 Address 1: 0 Address 2: 0 ... Address 24: 0
+
+Fetching instruction at address 4: 128
+Decoding instruction: 128 as (STORE R0 R3)
+Stored value 14 at memory address 3
+Current Register States: R0: 14 R1: 4 R2: 9 R3: 10
+Current Memory State: Address 0: 0 Address 1: 0 Address 2: 0 ... Address 24: 0
+
+Fetching instruction at address 5: 192
+Decoding instruction: 192 as (JUMP R0 R2)
+Jumping to address 9
+Current Register States: R0: 14 R1: 4 R2: 9 R3: 10
+Current Memory State: Address 0: 0 Address 1: 0 Address 2: 0 ... Address 24: 0
+
+Fetching instruction at address 9: 256
+Decoding instruction: 256 as (RET R0 R1)
+Returning from subroutine to address 0
+Current Register States: R0: 14 R1: 4 R2: 9 R3: 10
+Current Memory State: Address 0: 0 Address 1: 0 Address 2: 0 ... Address 24: 0
 ```
 
