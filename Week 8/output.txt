@@ -1,0 +1,76 @@
+Fetching instruction at address 0: 10
+Decoding instruction: 10 as (ADD R1 R2)
+Operands: operand1 = 4, operand2 = 9
+Executing instruction: 10 (ADD R1 R2)
+Updated R1 to 13
+Current Register States: R0: 0 R1: 13 R2: 9 R3: 10 
+Current Memory State: Address 0: 0 Address 1: 0 Address 2: 0 Address 3: 0 Address 4: 0 Address 5: 0 Address 6: 0 Address 7: 0 Address 8: 0 Address 9: 0 Address 10: 0 Address 11: 0 Address 12: 0 Address 13: 0 Address 14: 0 Address 15: 0 Address 16: 0 Address 17: 0 Address 18: 0 Address 19: 0 Address 20: 0 Address 21: 0 Address 22: 0 Address 23: 0 Address 24: 0 
+
+Fetching instruction at address 1: 89
+Decoding instruction: 89 as (SUB R3 R1)
+Operands: operand1 = 10, operand2 = 13
+Executing instruction: 89 (SUB R3 R1)
+Updated R3 to 253
+Current Register States: R0: 0 R1: 13 R2: 9 R3: 253 
+Current Memory State: Address 0: 0 Address 1: 0 Address 2: 0 Address 3: 0 Address 4: 0 Address 5: 0 Address 6: 0 Address 7: 0 Address 8: 0 Address 9: 0 Address 10: 0 Address 11: 0 Address 12: 0 Address 13: 0 Address 14: 0 Address 15: 0 Address 16: 0 Address 17: 0 Address 18: 0 Address 19: 0 Address 20: 0 Address 21: 0 Address 22: 0 Address 23: 0 Address 24: 0 
+
+Fetching instruction at address 2: 147
+Decoding instruction: 147 as (LOAD R2 R3)
+Operands: operand1 = 9, operand2 = 253
+Loaded value 255into R2
+Current Register States: R0: 0 R1: 13 R2: 255 R3: 253 
+Current Memory State: Address 0: 0 Address 1: 0 Address 2: 0 Address 3: 0 Address 4: 0 Address 5: 0 Address 6: 0 Address 7: 0 Address 8: 0 Address 9: 0 Address 10: 0 Address 11: 0 Address 12: 0 Address 13: 0 Address 14: 0 Address 15: 0 Address 16: 0 Address 17: 0 Address 18: 0 Address 19: 0 Address 20: 0 Address 21: 0 Address 22: 0 Address 23: 0 Address 24: 0 
+
+Fetching instruction at address 3: 200
+Decoding instruction: 200 as (STORE R1 R0)
+Operands: operand1 = 13, operand2 = 0
+Stored value 13 at memory address 0
+Current Register States: R0: 0 R1: 13 R2: 255 R3: 253 
+Current Memory State: Address 0: 13 Address 1: 0 Address 2: 0 Address 3: 0 Address 4: 0 Address 5: 0 Address 6: 0 Address 7: 0 Address 8: 0 Address 9: 0 Address 10: 0 Address 11: 0 Address 12: 0 Address 13: 0 Address 14: 0 Address 15: 0 Address 16: 0 Address 17: 0 Address 18: 0 Address 19: 0 Address 20: 0 Address 21: 0 Address 22: 0 Address 23: 0 Address 24: 0 
+
+Fetching instruction at address 4: 272
+Decoding instruction: 272 as (ADD R2 R0)
+Operands: operand1 = 255, operand2 = 0
+Executing instruction: 272 (ADD R2 R0)
+Updated R2 to 255
+Current Register States: R0: 0 R1: 13 R2: 255 R3: 253 
+Current Memory State: Address 0: 13 Address 1: 0 Address 2: 0 Address 3: 0 Address 4: 0 Address 5: 0 Address 6: 0 Address 7: 0 Address 8: 0 Address 9: 0 Address 10: 0 Address 11: 0 Address 12: 0 Address 13: 0 Address 14: 0 Address 15: 0 Address 16: 0 Address 17: 0 Address 18: 0 Address 19: 0 Address 20: 0 Address 21: 0 Address 22: 0 Address 23: 0 Address 24: 0 
+
+Fetching instruction at address 5: 344
+Decoding instruction: 344 as (SUB R3 R0)
+Operands: operand1 = 253, operand2 = 0
+Executing instruction: 344 (SUB R3 R0)
+Updated R3 to 253
+Current Register States: R0: 0 R1: 13 R2: 255 R3: 253 
+Current Memory State: Address 0: 13 Address 1: 0 Address 2: 0 Address 3: 0 Address 4: 0 Address 5: 0 Address 6: 0 Address 7: 0 Address 8: 0 Address 9: 0 Address 10: 0 Address 11: 0 Address 12: 0 Address 13: 0 Address 14: 0 Address 15: 0 Address 16: 0 Address 17: 0 Address 18: 0 Address 19: 0 Address 20: 0 Address 21: 0 Address 22: 0 Address 23: 0 Address 24: 0 
+
+Fetching instruction at address 6: 392
+Decoding instruction: 392 as (LOAD R1 R0)
+Operands: operand1 = 13, operand2 = 0
+Loaded value 13into R1
+Current Register States: R0: 0 R1: 13 R2: 255 R3: 253 
+Current Memory State: Address 0: 13 Address 1: 0 Address 2: 0 Address 3: 0 Address 4: 0 Address 5: 0 Address 6: 0 Address 7: 0 Address 8: 0 Address 9: 0 Address 10: 0 Address 11: 0 Address 12: 0 Address 13: 0 Address 14: 0 Address 15: 0 Address 16: 0 Address 17: 0 Address 18: 0 Address 19: 0 Address 20: 0 Address 21: 0 Address 22: 0 Address 23: 0 Address 24: 0 
+
+Fetching instruction at address 7: 464
+Decoding instruction: 464 as (STORE R2 R0)
+Operands: operand1 = 255, operand2 = 0
+Stored value 255 at memory address 0
+Current Register States: R0: 0 R1: 13 R2: 255 R3: 253 
+Current Memory State: Address 0: 255 Address 1: 0 Address 2: 0 Address 3: 0 Address 4: 0 Address 5: 0 Address 6: 0 Address 7: 0 Address 8: 0 Address 9: 0 Address 10: 0 Address 11: 0 Address 12: 0 Address 13: 0 Address 14: 0 Address 15: 0 Address 16: 0 Address 17: 0 Address 18: 0 Address 19: 0 Address 20: 0 Address 21: 0 Address 22: 0 Address 23: 0 Address 24: 0 
+
+Fetching instruction at address 8: 512
+Decoding instruction: 512 as (ADD R0 R0)
+Operands: operand1 = 0, operand2 = 0
+Executing instruction: 512 (ADD R0 R0)
+Updated R0 to 0
+Current Register States: R0: 0 R1: 13 R2: 255 R3: 253 
+Current Memory State: Address 0: 255 Address 1: 0 Address 2: 0 Address 3: 0 Address 4: 0 Address 5: 0 Address 6: 0 Address 7: 0 Address 8: 0 Address 9: 0 Address 10: 0 Address 11: 0 Address 12: 0 Address 13: 0 Address 14: 0 Address 15: 0 Address 16: 0 Address 17: 0 Address 18: 0 Address 19: 0 Address 20: 0 Address 21: 0 Address 22: 0 Address 23: 0 Address 24: 0 
+
+Fetching instruction at address 9: 0
+Decoding instruction: 0 as (ADD R0 R0)
+Operands: operand1 = 0, operand2 = 0
+Executing instruction: 0 (ADD R0 R0)
+Updated R0 to 0
+Current Register States: R0: 0 R1: 13 R2: 255 R3: 253 
+Current Memory State: Address 0: 255 Address 1: 0 Address 2: 0 Address 3: 0 Address 4: 0 Address 5: 0 Address 6: 0 Address 7: 0 Address 8: 0 Address 9: 0 Address 10: 0 Address 11: 0 Address 12: 0 Address 13: 0 Address 14: 0 Address 15: 0 Address 16: 0 Address 17: 0 Address 18: 0 Address 19: 0 Address 20: 0 Address 21: 0 Address 22: 0 Address 23: 0 Address 24: 0 
+
