@@ -84,7 +84,7 @@ The primary objective is to gain a thorough understanding of CPU design and oper
   - Add support for subroutines and interrupts.
   - Integrate a simple pipeline mechanism.
 
-### Week 8: Performance Optimization
+### [Week 8: Performance Optimization](https://github.com/binarysleuth247/Project-vCPU/blob/main/Week%208/Week8.md)
 - **Objective:** Optimize the emulator for better performance.
 - **Tasks:**
   - Profile the emulator to identify bottlenecks.
