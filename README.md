@@ -7,7 +7,6 @@ Welcome to the Virtual CPU Emulator project! This project aims to build an emula
 ## Group Members 👥
 - Member 1: [MD. Rohan **ID: 11220320958**](mailto:mdrohansheikh1000@gmail.com)
 - Member 2: [Sanjana Athoy **ID: 11220320953**](mailto:sanjanaathoy55@gmail.com)
-- Member 3: [Tumpa Talukder **ID: 11220320962**](mailto:tumpatalukder970@gmail.com)
 
 ## Course Details 🏫
 - **Course Name:** Computer Architecture 
